@@ -1,8 +1,10 @@
 let arr=[];
 let flag=false;
-let time=700;
+let time=10;
 let fruits;
-let change=15;
+let change=30;
+let j=0;
+let speed=1000;
 visualiser();
 function visualiser(){
 document.getElementById("main").innerHTML="";
@@ -35,32 +37,43 @@ for (let i=0;i<arr.length;i++){
     fruits[i].style.height=arr[i]*2+"px";
     fruits[i].style.left=change*i+"px";
 }
+j=0;
 }
-function sortit(){
+function swap(x,y){
+    let temp=document.getElementById(arr[x]).style.left;
+    document.getElementById(arr[x]).style.left=document.getElementById(arr[y]).style.left;
+    document.getElementById(arr[x]).style.backgroundColor="red";
+    document.getElementById(arr[y]).style.left=temp;
+    temp=arr[x];
+    arr[x]=arr[y];
+    arr[y]=temp;
+}
+function selectionSort(){
+        let smallest_i=j;
+        for (let i=j+1;i<arr.length;i++){
+            if (arr[i]<arr[smallest_i]){
+                smallest_i=i;
+            }
+        }
+        swap(smallest_i,j);
+        if (j<arr.length-1){
+            j++;
+            setTimeout(selectionSort,speed);
+        }
+        
+}
+function bubbleSort(){
     flag=false;
-    for(let i=0;i<arr.length;i++){
-        fruits[i].style.backgroundColor="white";
-    }
     for(let i = 0; i < arr.length-1; i++){
         if (arr[i]>arr[i+1]){
-            let temp=arr[i];
-            document.getElementById(arr[i]).style.left=parseInt(document.getElementById(arr[i]).style.left.slice(0,document.getElementById(arr[i]).style.left.length-2))+change+"px";
-            document.getElementById(arr[i]).style.backgroundColor="red";
-            document.getElementById(arr[i+1]).style.left=parseInt(document.getElementById(arr[i+1]).style.left.slice(0,document.getElementById(arr[i+1]).style.left.length-2))-change+"px";
-            document.getElementById(arr[i+1]).style.backgroundColor="green";
-            arr[i]=arr[i+1];
-            arr[i+1]=temp; 
-            flag=true;  
-            break;          
+            swap(i,i+1);
+            flag=true;         
         }}
         if (flag){
-            setTimeout(sortit, time); 
+            setTimeout(bubbleSort,speed);
         }
         else{
-        for(let i = 0; i < arr.length; i++){
-            document.getElementById(arr[i]).style.backgroundColor="green";
+            return;
         }
-    }
 }
-
   
