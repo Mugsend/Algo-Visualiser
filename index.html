@@ -8,13 +8,14 @@
     <title>Algorithm Visualizer</title>
 </head>
 <body>
-    <h1  style="text-align: center;">Algorithm Visualizer <br> Bubble Sort</h1>
+    <h1  style="text-align: center;">Algorithm Visualizer</h1>
     <div style="text-align: center;">
     <label for="inp">Range</label>
     <input type="range" onclick="visualiser()"
            id="inp"
-           value="10" min="10" max="80">
-    <button onclick="sortit()">start</button>
+           value="10" min="10" max="40">
+    <button onclick="selectionSort()">selection sort</button>
+    <button onclick="bubbleSort()">bubble sort</button>
 </div>
     <div class="main" id="main">
 
