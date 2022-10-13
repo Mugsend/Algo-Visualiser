@@ -1,0 +1,19 @@
+.main{
+    background-color: black;
+    margin: 10px auto;
+    height: 400px;
+    width: 1200px;
+    position: relative;
+}
+.line{
+    transition: all 0.5s;
+    width: 10px;
+    background-color: aliceblue;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+}
+body{
+    overflow-x: none;
+    box-sizing: border-box;
+}
