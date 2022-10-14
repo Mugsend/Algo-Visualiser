@@ -2,7 +2,7 @@ let arr=[];
 let flag=false;
 let time=10;
 let fruits;
-let change=30;
+let change=document.getElementById("main").offsetWidth/80;
 let j=0;
 let speed=1000;
 visualiser();
@@ -35,19 +35,32 @@ fruits=document.getElementsByClassName("line");
 for (let i=0;i<arr.length;i++){
     document.getElementById("main").innerHTML+="<div class='line' id='"+arr[i]+"'"+">"+"</div";
     fruits[i].style.height=arr[i]*2+"px";
-    fruits[i].style.left=change*i+"px";
+    fruits[i].style.left=change*i+2+"px";
 }
 j=0;
 }
+function chngspeed(){
+    speed=2000/document.getElementById("spd").value;
+}
+function start(){
+    if (document.getElementById("algos").value=="sel"){
+        selectionSort();
+    }
+    if (document.getElementById("algos").value=="bub"){
+        bubbleSort();
+    }
+}
 function swap(x,y){
+    let diff=y-x;
+    document.getElementById(arr[x]).style.transitionDuratio=diff+"s";
     let temp=document.getElementById(arr[x]).style.left;
     document.getElementById(arr[x]).style.left=document.getElementById(arr[y]).style.left;
-    document.getElementById(arr[x]).style.backgroundColor="red";
     document.getElementById(arr[y]).style.left=temp;
     temp=arr[x];
     arr[x]=arr[y];
     arr[y]=temp;
 }
+   
 function selectionSort(){
         let smallest_i=j;
         for (let i=j+1;i<arr.length;i++){
@@ -67,7 +80,7 @@ function bubbleSort(){
     for(let i = 0; i < arr.length-1; i++){
         if (arr[i]>arr[i+1]){
             swap(i,i+1);
-            flag=true;         
+            flag=true;      
         }}
         if (flag){
             setTimeout(bubbleSort,speed);

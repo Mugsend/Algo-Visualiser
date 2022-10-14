@@ -10,13 +10,23 @@
 <body>
     <h1  style="text-align: center;">Algorithm Visualizer</h1>
     <div style="text-align: center;">
-    <label for="inp">Range</label>
-    <input type="range" onclick="visualiser()"
+    <label for="inp" >Range</label>
+    <input type="range" 
            id="inp"
-           value="10" min="10" max="40">
-    <button onclick="selectionSort()">selection sort</button>
-    <button onclick="bubbleSort()">bubble sort</button>
+           value="10" min="10" max="80" onclick="visualiser()">
+           <label for="spd">Speed</label>
+    <input type="range" 
+           id="spd"
+           value="5" min="1" max="20" onclick="chngspeed()">
+           <label for="algos">Choose algo to visualise</label>
+<select name="algos" id="algos">
+    <option value="sel">Selection Sort</option>
+    <option value="bub">Bubble Sort</option>
+    
+</select>
+<button onclick="start()">start</button>
 </div>
+
     <div class="main" id="main">
 
     </div>

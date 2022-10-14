@@ -2,13 +2,13 @@
     background-color: black;
     margin: 10px auto;
     height: 400px;
-    width: 1200px;
+    width: 95vw;
     position: relative;
 }
 .line{
+    background-color: red;
     transition: all 0.5s;
-    width: 20px;
-    background-color: aliceblue;
+    width: 0.8vw;
     display: inline-block;
     position: absolute;
     top: 0;
@@ -16,4 +16,6 @@
 body{
     width: 100vw;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
