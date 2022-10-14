@@ -43,10 +43,14 @@ function chngspeed(){
     speed=2000/document.getElementById("spd").value;
 }
 function start(){
+    document.getElementById("start").style.display="none";
     if (document.getElementById("algos").value=="sel"){
+        document.getElementById("status").innerHTML="Running Selection Sort";
         selectionSort();
+        
     }
     if (document.getElementById("algos").value=="bub"){
+        document.getElementById("status").innerHTML="Running Bubble Sort";
         bubbleSort();
     }
 }
@@ -84,9 +88,6 @@ function bubbleSort(){
         }}
         if (flag){
             setTimeout(bubbleSort,speed);
-        }
-        else{
-            return;
         }
 }
   
