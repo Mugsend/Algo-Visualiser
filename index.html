@@ -9,16 +9,16 @@
 </head>
 <body>
     <h1  style="text-align: center;">Algorithm Visualizer</h1>
-    <div style="text-align: center;">
+    <div id="controls" style="text-align: center;">
     <label for="inp" >Range</label>
     <input type="range" 
            id="inp"
-           value="10" min="10" max="75" onclick="visualiser()">
+           value="10" min="10" max="80" onclick="visualiser()">
            <br>
            <label for="spd">Speed</label>
     <input type="range" 
            id="spd"
-           value="5" min="1" max="5" onclick="chngspeed()">
+           value="3" min="1" max="5" onclick="chngspeed()">
            <br>
            <label for="algos">Choose algo to visualise</label>
 <select name="algos" id="algos">
@@ -28,8 +28,9 @@
 </select>
 <br>
 <button id ="start" onclick="start()">start</button><span id="status"></span>
+<button id ="reset" onclick="reset()">reset</button>
 </div>
-
+<span id="status"></span>
     <div class="main" id="main">
 
     </div>

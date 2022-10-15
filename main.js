@@ -25,7 +25,7 @@ if (!flag){
 }
 }
 else{
-    document.getElementById("main").innerHTML=""
+    document.getElementById("main").innerHTML="";
     while(arr.length!=count){
         arr.pop();
     }
@@ -46,11 +46,18 @@ function chngspeed(){
         fruits[i].style.transitionDuration=speed/1000+"s";
     }
 }
-function start(){
+function hide(){
     document.getElementById("start").style.display="none";
+    document.getElementById("reset").style.display="none";
+    document.getElementById("inp").style.display="none";
+    document.getElementById("algos").style.display="none";
+}
+function start(){
+    hide();
     if (document.getElementById("algos").value=="sel"){
         document.getElementById("status").innerHTML="Running Selection Sort";
         selectionSort(0);
+
         
     }
     if (document.getElementById("algos").value=="bub"){
@@ -61,6 +68,18 @@ function start(){
         document.getElementById("status").innerHTML="Running Quick Sort";
         quickSort(0,arr.length-1);
     }
+}
+function reset(){
+    arr=[];
+    document.getElementById("status").innerHTML="";
+    document.getElementById("start").style.display="inline";
+    visualiser();
+}
+function done(){
+    document.getElementById("status").innerHTML="done";
+    document.getElementById("inp").style.display="inline";
+    document.getElementById("reset").style.display="inline";
+    document.getElementById("algos").style.display="inline";
 }
 function swap(x,y){
     let temp=document.getElementById(arr[x]).style.left;
@@ -83,6 +102,9 @@ function selectionSort(j){
             j++;
             setTimeout(selectionSort,speed,j);
         }
+        else{
+            done();
+        }
         
 }
 function bubbleSort(){
@@ -94,6 +116,9 @@ function bubbleSort(){
         }}
         if (flag){
             setTimeout(bubbleSort,speed);
+        }
+        else{
+            done();
         }
 }
 function quickSort(low,high){
@@ -109,5 +134,8 @@ function quickSort(low,high){
     setTimeout(quickSort,speed,low,k-1);
     setTimeout(quickSort,speed,k+1,high);
 }
+    else{
+        done();
+    }
 }
   
