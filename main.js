@@ -1,11 +1,12 @@
 let arr=[];
 let fruits;
-let change=document.getElementById("main").offsetWidth/80;
 let speed=2000/document.getElementById("spd").value;
 visualiser();
 function visualiser(){
+
 document.getElementById("main").innerHTML="";
 let count=parseInt(document.getElementById("inp").value);
+let change=document.getElementById("main").offsetWidth/count;
 if (arr.length<count){
 while(arr.length!=count){
     let n=parseInt((Math.random()*200));
@@ -33,10 +34,12 @@ fruits=document.getElementsByClassName("line");
 for (let i=0;i<arr.length;i++){
     document.getElementById("main").innerHTML+="<div class='line' id='"+arr[i]+"'"+">"+"</div";
     fruits[i].style.height=arr[i]*2+"px";
-    fruits[i].style.left=change*i+2+"px";
+    fruits[i].style.left=change*i+"px";
+    fruits[i].style.width=document.getElementById("main").offsetWidth/count-document.getElementById("main").offsetWidth/count/5+"px";
 }
 chngspeed();
 }
+
 function chngspeed(){
     speed=2000/document.getElementById("spd").value;
     for (let i=0;i<arr.length;i++){
