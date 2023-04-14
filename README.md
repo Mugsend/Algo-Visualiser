@@ -1,16 +1,16 @@
-#Algorithm Visualizer
+# Algorithm Visualizer
 The Algorithm Visualizer is a web-based application that allows users to visualize the step-by-step execution of popular sorting algorithms including Selection Sort, Insertion Sort, Bubble Sort, and Quick Sort. The application is built using HTML, CSS, and JavaScript, and provides an interactive interface to understand the inner workings of these sorting algorithms.
 
-##Features
+## Features
 Visualization of Selection Sort, Insertion Sort, Bubble Sort, and Quick Sort algorithms.
 Interactive user interface with visualizations of array elements and algorithm steps.
 Ability to adjust the speed of the visualization to match personal preference.
 Play, pause, and reset options to control the visualization.
 Real-time visualization of algorithm steps with highlighting of array elements being compared or swapped.
 
-##Getting Started
+## Getting Started
 
-Go to the project page (https://mugsend.github.io/algo_visualiser/) or
+Go to the project page (https://mugsend.github.io/algo_visualiser/) or -
 Follow the steps below to get the Algorithm Visualizer up and running on your local machine:
 1. Clone the repository to your local machine using git clone or download the ZIP file and extract it.
 2. Open the index.html file in your web browser.
