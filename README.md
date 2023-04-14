@@ -1,4 +1,4 @@
-# Algorithm Visualizer
+# Sorting Algorithm Visualizer
 The Algorithm Visualizer is a web-based application that allows users to visualize the step-by-step execution of popular sorting algorithms including Selection Sort, Insertion Sort, Bubble Sort, and Quick Sort. The application is built using HTML, CSS, and JavaScript, and provides an interactive interface to understand the inner workings of these sorting algorithms.
 
 ## Features
