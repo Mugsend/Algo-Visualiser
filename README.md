@@ -10,7 +10,7 @@ Real-time visualization of algorithm steps with highlighting of array elements b
 
 ## Getting Started
 
-Go to the project page (https://mugsend.github.io/algo_visualiser/) or -
+Go to the project page (https://mugsend.github.io/Sorting_Algorithm_Visualiser/) or -
 Follow the steps below to get the Algorithm Visualizer up and running on your local machine:
 1. Clone the repository to your local machine using git clone or download the ZIP file and extract it.
 2. Open the index.html file in your web browser.
